@@ -4,13 +4,13 @@ export default class Ui{
         let html = `
             <div>
                 <p>${data.name}, ${data.sys.country}</p>
-                <p>${data.weather.description}</p>
-                <p>${data.main.temp} °C</p>
-                <p>"Feels like": ${data.main.feels_like}</p>
+                <p>${data.weather[0].description}</p>
+                <p>${Math.round(data.main.temp)} °C</p>
+                <p>"Feels like": ${Math.round(data.main.feels_like)}</p>
                 <p>Humidity: ${data.main.humidity} %</p>
-                <p>Min temperature: ${data.main.temp_min} °C</p>
-                <p>Max temperature: ${data.main.temp_max} °C</p>
-                <p>Wind: ${data.wind.speed} mph</p>
+                <p>Min temperature: ${Math.round(data.main.temp_min)} °C</p>
+                <p>Max temperature: ${Math.round(data.main.temp_max)} °C</p>
+                <p>Wind: ${Math.round(data.wind.speed)} mph</p>
                 <p>Precipitations last hour: </p>
             </div>
         `;

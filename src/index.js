@@ -20,6 +20,7 @@ form.addEventListener('submit', function(e){
     weather.getWeather(city)
         .then( data => {
             ui.updateUi(data);
+            console.log(data);
         })
         .catch(error => {
             console.log(error);
