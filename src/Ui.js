@@ -10,7 +10,7 @@ export default class Ui{
                 <p>Humidity: ${data.main.humidity} %</p>
                 <p>Min temperature: ${Math.round(data.main.temp_min)} °C</p>
                 <p>Max temperature: ${Math.round(data.main.temp_max)} °C</p>
-                <p>Wind: ${Math.round(data.wind.speed * 2369)} mph</p>
+                <p>Wind: ${Math.round(data.wind.speed * 2,369)} mph</p>
                 <p>Rain volume for last hour: ${data.rain ? data.rain['1h'] : 0} mm</p>
             </div>
         `;

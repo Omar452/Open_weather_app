@@ -20,7 +20,7 @@ form.addEventListener('submit', function(e){
     weather.getWeather(city)
         .then( data => {
             if(data.sys.country !== "GB"){
-                weatherDiv.innerHTML = `<p>"${city}" is not in the UK, please enter a valid UK city name!</p>`
+                weatherDiv.innerHTML = `<p style="color:red">"${city}" is not in the UK, please enter a valid UK city name!</p>`
             }else{
                 ui.updateUi(data);
             }
@@ -29,7 +29,7 @@ form.addEventListener('submit', function(e){
         })
         .catch(error => {
             if(error.message === "Cannot read property 'country' of undefined"){
-                weatherDiv.innerHTML = `<p>I don't know this city, please enter a valid UK city name!</p>`
+                weatherDiv.innerHTML = `<p style="color:red">I don't know this city, please enter a valid UK city name!</p>`
             }
             console.log(error.message);
             form.reset();
