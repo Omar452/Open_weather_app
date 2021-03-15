@@ -19,10 +19,18 @@ form.addEventListener('submit', function(e){
     let city = cityInput.value;
     weather.getWeather(city)
         .then( data => {
-            ui.updateUi(data);
+            if(data.sys.country !== "GB"){
+                weatherDiv.innerHTML = `<p>"${city}" is not in the UK, please enter a valid UK city name!</p>`
+            }else{
+                ui.updateUi(data);
+            }
+           
             console.log(data);
         })
         .catch(error => {
+            if(error.constructor.name === "TypeError"){
+                weatherDiv.innerHTML = `<p>Please enter a valid UK city name!</p>`
+            }
             console.log(error);
         });
 });
