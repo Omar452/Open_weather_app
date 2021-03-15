@@ -21,4 +21,7 @@ form.addEventListener('submit', function(e){
         .then( data => {
             ui.updateUi(data);
         })
-})
+        .catch(error => {
+            console.log(error);
+        });
+});
