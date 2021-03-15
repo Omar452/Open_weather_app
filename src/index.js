@@ -24,8 +24,8 @@ form.addEventListener('submit', function(e){
             }else{
                 ui.updateUi(data);
             }
-           
             console.log(data);
+            form.reset.apply();
         })
         .catch(error => {
             if(error.constructor.name === "TypeError"){
