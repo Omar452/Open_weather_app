@@ -25,12 +25,13 @@ form.addEventListener('submit', function(e){
                 ui.updateUi(data);
             }
             console.log(data);
-            form.reset.apply();
+            form.reset();
         })
         .catch(error => {
-            if(error.constructor.name === "TypeError"){
-                weatherDiv.innerHTML = `<p>Please enter a valid UK city name!</p>`
+            if(error.message === "Cannot read property 'country' of undefined"){
+                weatherDiv.innerHTML = `<p>I don't know this city, please enter a valid UK city name!</p>`
             }
-            console.log(error);
+            console.log(error.message);
+            form.reset();
         });
 });
