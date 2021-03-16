@@ -16,7 +16,7 @@ let ui = new Ui();
 //add event listener on form submit
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    let city = cityInput.value;
+    let city = cityInput.value + ", GB";
     weather.getWeather(city)
         .then( data => {
             if(data.sys.country !== "GB"){
